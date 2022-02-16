@@ -12,6 +12,11 @@ namespace Backend.Models
         [Required(ErrorMessage = "Designation is required")]
         public string? Designation { get; set; }
 
+        [ForeignKey(nameof(Fournisseur))]
+        public int FournisseurId { get; set; }
+
+        public Fournisseur? Fournisseur { get; set; }
+
     }
 }
 

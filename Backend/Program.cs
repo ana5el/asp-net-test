@@ -16,6 +16,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<IFournisseurRepository, FournisseurRepository>();
+builder.Services.AddScoped<IReceptionRepository, ReceptionRepository>();
+
 // end
 
 

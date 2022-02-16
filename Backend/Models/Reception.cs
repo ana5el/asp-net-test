@@ -13,11 +13,6 @@ namespace Backend.Models
         [Required(ErrorMessage = "Date is required")]
         public DateTime dateReception { get; set; }
 
-        [ForeignKey(nameof(Fournisseur))]
-        public int idFournisseur { get; set; }
-
-        public Fournisseur? Fournisseur { get; set; }
-
         public double HT { get; set; }
 
         public double TVA { get; set; }

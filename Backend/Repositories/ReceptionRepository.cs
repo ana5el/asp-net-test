@@ -1,6 +1,7 @@
 ﻿using System;
 using Backend.Data;
 using Backend.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Repositories
 {
@@ -9,6 +10,13 @@ namespace Backend.Repositories
 		public ReceptionRepository(ApplicationDbContext context) : base(context)
 		{
 		}
-	}
+
+        public override IEnumerable<Reception> GetAll()
+        {
+            return base._context.Receptions.Include(x => x.details);
+        }
+
+
+    }
 }
 

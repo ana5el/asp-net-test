@@ -1,6 +1,7 @@
 ﻿using System;
 using Backend.Data;
 using Backend.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Repositories
 {
@@ -9,6 +10,11 @@ namespace Backend.Repositories
 		public ArticleRepository(ApplicationDbContext context) : base(context)
 		{
 		}
-	}
+
+        public override IEnumerable<Article> GetAll()
+        {
+            return base._context.Articles.Include(x => x.Fournisseur);
+        }
+    }
 }
 

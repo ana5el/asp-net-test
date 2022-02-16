@@ -19,7 +19,7 @@ namespace Backend.Repositories
             _context.SaveChanges();
         }
 
-        public void AddAll(IEnumerable<T> entities)
+        public virtual void AddAll(IEnumerable<T> entities)
         {
             _context.Set<T>().AddRange(entities);
         }
@@ -35,7 +35,7 @@ namespace Backend.Repositories
             return _context.Set<T>().Where(expression);
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return _context.Set<T>().ToList();
         }
