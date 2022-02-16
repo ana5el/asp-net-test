@@ -16,6 +16,7 @@ namespace Backend.Repositories
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);
+            _context.SaveChanges();
         }
 
         public void AddAll(IEnumerable<T> entities)
@@ -26,6 +27,7 @@ namespace Backend.Repositories
         public void Delete(T entity)
         {
             _context.Set<T>().Remove(entity);
+            _context.SaveChanges();
         }
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> expression)
@@ -46,6 +48,7 @@ namespace Backend.Repositories
         public void Update(T entity)
         {
             _context.Set<T>().Update(entity);
+            _context.SaveChanges();
         }
     }
 }

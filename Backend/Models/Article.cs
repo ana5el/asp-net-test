@@ -11,6 +11,7 @@ namespace Backend.Models
 
         [Required(ErrorMessage = "Designation is required")]
         public string? Designation { get; set; }
+
     }
 }
 
